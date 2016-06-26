@@ -18,14 +18,15 @@ var parameters = {
     desiredCapabilities: {
       browserName: 'internet explorer',
       platform: 'Windows 10',
-      version: '11.103',
-      username: username,
-      accessKey: accessKey
+      version: '11.103'
+      //username: username,
+      //accessKey: accessKey
     },
+    host: username + ':' + accessKey + '@ondemand.saucelabs.com/wd/hub'
     //host: username + ':' + accessKey + '@ondemand.saucelabs.com',
     //host: username + ':' + accessKey + '@localhost',
-    port: 4445,
-    path: '/wd/hub'
+    //port: 4445,
+    //path: '/wd/hub'
 //"http://" + username + ":" + accessKey + "@ondemand.saucelabs.com:80/wd/hub"
   }
 };
