@@ -25,7 +25,9 @@ var parameters = {
       username: username,
       accessKey: accessKey
     },
-    host: username + ':' + accessKey + '@ondemand.saucelabs.com',
+    //host: 'ondemand.saucelabs.com',
+    host: '127.0.0.1',
+    //host: username + ':' + accessKey + '@ondemand.saucelabs.com',
     //host: username + ':' + accessKey + '@localhost',
     //host: username + ':' + accessKey + '@127.0.0.1',
     port: 4445,
