@@ -1,36 +1,36 @@
 {
-  "name": "node-ansible-test", 
-  "version": "0.1.0", 
-  "description": "node-ansible-test", 
+  "name": "node-ansible-test",
+  "version": "0.1.0",
+  "description": "node-ansible-test",
   "repository": {
-    "type": "git", 
+    "type": "git",
     "url": "https://github.com/danielbush/node-ansible-test"
-  }, 
-  "main": "index.js", 
-  "dependencies": {}, 
+  },
+  "main": "index.js",
+  "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.10.4", 
-    "babel-loader": "^6.2.4", 
-    "babel-preset-es2015": "^6.9.0", 
-    "cucumber": "^1.2.0", 
-    "cucumber-mink": "^1.4.0", 
-    "phantomjs-prebuilt": "^2.1.7", 
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "cucumber": "^1.0.0",
+    "cucumber-mink": "^1.4.0",
+    "phantomjs-prebuilt": "^2.1.7",
     "webpack": "^1.13.1"
-  }, 
+  },
   "engines": {
     "node": ">=4.0.0"
-  }, 
+  },
   "scripts": {
-    "webpack": "node_modules/.bin/webpack --config webpack.config.js", 
-    "webpack:watch": "node_modules/.bin/webpack --watch --config webpack.config.js", 
-    "test:acceptance": "npm run test:mink", 
-    "phantomjs": "node_modules/.bin/phantomjs --webdriver=127.0.0.1:4444 &", 
-    "test:mink": "node_modules/.bin/cucumberjs --require features/support/ --require features/step_definitions/", 
-    "pretest:acceptance": "npm run phantomjs & sleep 0.5", 
-    "posttest:acceptance": "pkill phantomjs && true", 
+    "webpack": "node_modules/.bin/webpack --config webpack.config.js",
+    "webpack:watch": "node_modules/.bin/webpack --watch --config webpack.config.js",
+    "test:acceptance": "npm run test:mink",
+    "phantomjs": "node_modules/.bin/phantomjs --webdriver=127.0.0.1:4444 &",
+    "test:mink": "node_modules/.bin/cucumberjs --require features/support/mink.js --require features/step_definitions/",
+    "pretest:acceptance": "npm run phantomjs & sleep 0.5",
+    "posttest:acceptance": "pkill phantomjs && true",
     "test:sauce": "npm run test:mink"
-  }, 
-  "keywords": [], 
-  "author": "Daniel Bush", 
+  },
+  "keywords": [],
+  "author": "Daniel Bush",
   "license": "BSD-2-Clause"
 }
