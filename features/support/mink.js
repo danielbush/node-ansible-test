@@ -14,10 +14,16 @@ var Mink = require('cucumber-mink');
 var parameters = {
   driver: {
     desiredCapabilities: {
-      browserName: 'phantomjs'
+      browserName: 'internet explorer',
+      platform: 'Windows 10',
+      version: '11.103',
+      username: process.env.SAUCE_USERNAME,
+      accessKey: process.env.SAUCE_ACCESS_KEY
     },
-    logLevel: 'silent',
-    port: 4444
+    host: 'ondemand.saucelabs.com',
+    port: 80,
+    path: '/wd/hub'
+//"http://" + username + ":" + accessKey + "@ondemand.saucelabs.com:80/wd/hub"
   }
 };
 
