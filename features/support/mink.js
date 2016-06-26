@@ -21,10 +21,9 @@ var parameters = {
       version: '11.103',
       'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
       build: process.env.TRAVIS_BUILD_NUMBER,
-      name: 'integration'
-
-      //username: username,
-      //accessKey: accessKey
+      name: 'integration',
+      username: username,
+      accessKey: accessKey
     },
     //host: username + ':' + accessKey + '@ondemand.saucelabs.com',
     //host: username + ':' + accessKey + '@localhost',
