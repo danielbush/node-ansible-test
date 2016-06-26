@@ -18,7 +18,11 @@ var parameters = {
     desiredCapabilities: {
       browserName: 'internet explorer',
       platform: 'Windows 10',
-      version: '11.103'
+      version: '11.103',
+      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+      build: process.env.TRAVIS_BUILD_NUMBER,
+      name: 'integration'
+
       //username: username,
       //accessKey: accessKey
     },
