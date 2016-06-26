@@ -29,12 +29,13 @@ var parameters = {
     //host: username + ':' + accessKey + '@ondemand.saucelabs.com/wd/hub'
     //host: username + ':' + accessKey + '@ondemand.saucelabs.com',
     //host: username + ':' + accessKey + '@localhost',
-    url: username + ':' + accessKey + '@localhost:4445/wd/hub'
-    //port: 4445,
-    //path: '/wd/hub'
+    host: username + ':' + accessKey + '@localhost',
+    port: 4445,
+    path: '/wd/hub'
 //"http://" + username + ":" + accessKey + "@ondemand.saucelabs.com:80/wd/hub"
   }
 };
+console.log('<<<< host', host);
 
 module.exports = function () {
   Mink.init(this, parameters);
