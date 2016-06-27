@@ -34,7 +34,7 @@ var parameters = {
     //host: username + ':' + accessKey + '@localhost',
     //host: username + ':' + accessKey + '@127.0.0.1',
     port: 4445,
-    username: username,
+    user: username,
     key: accessKey
     //path: '/wd/hub',
     //logLevel: 'verbose'
