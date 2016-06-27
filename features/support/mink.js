@@ -26,11 +26,11 @@ var parameters = {
       accessKey: accessKey
     },
     //host: 'ondemand.saucelabs.com',
-    host: '127.0.0.1',
-    //host: username + ':' + accessKey + '@ondemand.saucelabs.com',
+    //host: '127.0.0.1',
+    host: username + ':' + accessKey + '@ondemand.saucelabs.com',
     //host: username + ':' + accessKey + '@localhost',
     //host: username + ':' + accessKey + '@127.0.0.1',
-    port: 4445,
+    port: 80,
     path: '/wd/hub',
     logLevel: 'verbose'
 //"http://" + username + ":" + accessKey + "@ondemand.saucelabs.com:80/wd/hub"
