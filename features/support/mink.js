@@ -21,9 +21,9 @@ var parameters = {
       version: '11.103',
       'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
       build: process.env.TRAVIS_BUILD_NUMBER,
-      name: 'integration',
-      username: username,
-      accessKey: accessKey
+      name: 'integration'
+      //username: username,
+      //accessKey: accessKey
     },
     host: 'localhost',
     //host: 'ondemand.saucelabs.com',
@@ -34,8 +34,10 @@ var parameters = {
     //host: username + ':' + accessKey + '@localhost',
     //host: username + ':' + accessKey + '@127.0.0.1',
     port: 4445,
-    path: '/wd/hub',
-    logLevel: 'verbose'
+    username: username,
+    key: accessKey
+    //path: '/wd/hub',
+    //logLevel: 'verbose'
 //"http://" + username + ":" + accessKey + "@ondemand.saucelabs.com:80/wd/hub"
   }
 };

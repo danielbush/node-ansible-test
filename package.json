@@ -25,7 +25,7 @@
     "webpack:watch": "node_modules/.bin/webpack --watch --config webpack.config.js", 
     "test:acceptance": "npm run test:mink", 
     "phantomjs": "node_modules/.bin/phantomjs --webdriver=127.0.0.1:4444 &", 
-    "test:mink": "node_modules/.bin/cucumber-mink -- --require features/support/mink.js --require features/step_definitions/", 
+    "test:mink": "node_modules/.bin/cucumber-mink -- --require features/support --require features/step_definitions/", 
     "pretest:acceptance": "npm run phantomjs & sleep 0.5", 
     "posttest:acceptance": "pkill phantomjs && true", 
     "test:sauce": "npm run test:mink"
