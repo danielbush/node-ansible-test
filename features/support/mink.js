@@ -25,7 +25,7 @@ var parameters = {
       //username: username,
       //accessKey: accessKey
     },
-    host: 'localhost',
+    //host: 'localhost',
     //host: 'ondemand.saucelabs.com',
     //host: '127.0.0.1',
     //host: 'https://' + username + ':' + accessKey + '@ondemand.saucelabs.com',
@@ -41,7 +41,7 @@ var parameters = {
 //"http://" + username + ":" + accessKey + "@ondemand.saucelabs.com:80/wd/hub"
   }
 };
-console.log('<<<< parameters', parameters);
+//console.log('<<<< parameters', parameters);
 
 module.exports = function () {
   Mink.init(this, parameters);
