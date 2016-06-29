@@ -23,10 +23,11 @@ describe('something', function () {
     //browser = wd.promiseChainRemote('ondemand.saucelabs.com', 80, username, accessKey);
     //browser = wd.promiseChainRemote('localhost', 4445, username, accessKey);
     browser = wd.promiseChainRemote({
-      host: 'ondemand.saucelabs.com',
-      port: 80,
-      path: '/wd/hub',
-      auth: username + ':' + accessKey
+      //host: 'ondemand.saucelabs.com',
+      host: 'localhost',
+      port: 4445,
+      path: '/wd/hub'
+      //auth: username + ':' + accessKey
     });
 
     return browser.init({
@@ -35,7 +36,9 @@ describe('something', function () {
       version: '11.103',
       'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
       build: process.env.TRAVIS_BUILD_NUMBER,
-      name: 'tests'
+      name: 'tests',
+      username: username,
+      accessKey: accessKey
     });
   });
 
