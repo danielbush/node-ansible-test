@@ -13,16 +13,26 @@ chai.use(chaiAsPromised);
 var browser;
 var username  = process.env.SAUCE_USERNAME;
 var accessKey = process.env.SAUCE_ACCESS_KEY;
+var tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
+var build = process.env.TRAVIS_BUILD_NUMBER;
 
 describe('something', function () {
 
   before(function () {
     //browser = wd.promiseChainRemote('localhost');
     //browser = wd.promiseChainRemote('ondemand.saucelabs.com', 80, username, accessKey);
-    browser = wd.promiseChainRemote('http://' + username + ':' + accessKey + '@ondemand.saucelabs.com/wd/hub');
-    //browser = wd.promiseChainRemote('http://' + username + ':' + accessKey + '@localhost:4445/wd/hub');
     //browser = wd.promiseChainRemote('localhost', 4445, username, accessKey);
-    return browser.init({browserName:'chrome'});
+    browser = wd.promiseChainRemote({
+      port: 4445,
+      username: username,
+      accessKey: accessKey
+    });
+
+    return browser.init({
+      browserName:'chrome',
+      'tunnel-identifier': tunnelIdentifier,
+      build: build
+    });
   });
 
   beforeEach(function() {
