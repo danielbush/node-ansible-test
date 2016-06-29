@@ -31,9 +31,12 @@ describe('something', function () {
     });
 
     return browser.init({
-      browserName:'chrome',
-      'tunnel-identifier': tunnelIdentifier,
-      build: build
+      browserName: 'internet explorer',
+      platform: 'Windows 10',
+      version: '11.103',
+      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+      build: process.env.TRAVIS_BUILD_NUMBER,
+      name: 'tests'
     });
   });
 
