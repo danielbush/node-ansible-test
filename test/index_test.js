@@ -23,9 +23,11 @@ describe('something', function () {
     //browser = wd.promiseChainRemote('ondemand.saucelabs.com', 80, username, accessKey);
     //browser = wd.promiseChainRemote('localhost', 4445, username, accessKey);
     browser = wd.promiseChainRemote({
-      port: 4445,
-      username: username,
-      accessKey: accessKey
+      host: 'ondemand.saucelabs.com',
+      port: 80,
+      path: '/wd/hub',
+      user: username,
+      pwd: accessKey
     });
 
     return browser.init({
