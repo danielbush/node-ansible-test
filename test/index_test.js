@@ -28,6 +28,7 @@ describe('something', function () {
       port: 4445,
       path: '/wd/hub',
       auth: username + ':' + accessKey
+
     });
 
     return browser.init({
