@@ -35,7 +35,7 @@ describe('something', function () {
     //browser = wd.promiseChainRemote('ondemand.saucelabs.com', 80, username, accessKey);
     //browser = wd.promiseChainRemote('localhost', 4445, username, accessKey);
     browser = wd.promiseChainRemote(wdUrl);
-
+    browser.setAsyncScriptTimeout(20000);
     return browser.init(caps);
   });
 
