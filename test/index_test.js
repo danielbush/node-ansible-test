@@ -9,6 +9,7 @@ const chai = require('chai');
 const expect = chai.expect;
 const chaiAsPromised = require("chai-as-promised");
 const wd = require('wd');
+const url = require('url');
 chai.use(chaiAsPromised);
 var browser;
 var username  = process.env.SAUCE_USERNAME;
@@ -16,20 +17,16 @@ var accessKey = process.env.SAUCE_ACCESS_KEY;
 var tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
 var build = process.env.TRAVIS_BUILD_NUMBER;
 
+var wdUrl = `http://${username}:$(accessKey)@ondemand.saucelabs.com/wd/hub`;
+console.log(url.parse(wdUrl));
+
 describe('something', function () {
 
   before(function () {
     //browser = wd.promiseChainRemote('localhost');
     //browser = wd.promiseChainRemote('ondemand.saucelabs.com', 80, username, accessKey);
     //browser = wd.promiseChainRemote('localhost', 4445, username, accessKey);
-    browser = wd.promiseChainRemote({
-      //host: 'ondemand.saucelabs.com',
-      host: 'localhost',
-      port: 4445,
-      path: '/wd/hub',
-      auth: username + ':' + accessKey
-
-    });
+    browser = wd.promiseChainRemote(wdUrl);
 
     return browser.init({
       browserName: 'internet explorer',
