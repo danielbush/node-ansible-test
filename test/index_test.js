@@ -26,8 +26,8 @@ describe('something', function () {
       //host: 'ondemand.saucelabs.com',
       host: 'localhost',
       port: 4445,
-      path: '/wd/hub'
-      //auth: username + ':' + accessKey
+      path: '/wd/hub',
+      auth: username + ':' + accessKey
     });
 
     return browser.init({
