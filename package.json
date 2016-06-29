@@ -6,15 +6,20 @@
     "type": "git", 
     "url": "https://github.com/danielbush/node-ansible-test"
   }, 
-  "main": "index.js", 
+  "main": "lib/index.js", 
   "dependencies": {}, 
   "devDependencies": {
+    "babel-cli": "^6.10.1", 
     "babel-core": "^6.10.4", 
     "babel-loader": "^6.2.4", 
     "babel-preset-es2015": "^6.9.0", 
+    "chai": "^3.5.0", 
+    "chai-as-promised": "^5.3.0", 
     "cucumber": "^1.2.0", 
     "cucumber-mink": "^1.4.0", 
+    "mocha": "^2.5.3", 
     "phantomjs-prebuilt": "^2.1.7", 
+    "wd": "^0.4.0", 
     "webpack": "^1.13.1"
   }, 
   "engines": {
@@ -28,7 +33,12 @@
     "test:mink": "node_modules/.bin/cucumber-mink -- --require features/support --require features/step_definitions/", 
     "pretest:acceptance": "npm run phantomjs & sleep 0.5", 
     "posttest:acceptance": "pkill phantomjs && true", 
-    "test:sauce": "npm run test:mink"
+    "test:sauce": "npm run test:mink", 
+    "build": "node_modules/babel-cli/bin/babel.js src --out-dir lib", 
+    "prepublish": "npm run build", 
+    "pretest": "echo \"building project into lib/\"; npm run build", 
+    "test": "node_modules/.bin/mocha", 
+    "test:watch": "node_modules/.bin/mocha --watch"
   }, 
   "keywords": [], 
   "author": "Daniel Bush", 

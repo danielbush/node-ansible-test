@@ -1,0 +1,19 @@
+# Prepublish
+/src/
+
+# Logs
+*.log
+
+# Coverage directory
+coverage/
+
+# Sources
+test/
+
+# Dot files
+.agignore
+.babelrc
+.editorconfig
+.eslintrc.json
+.gitignore
+.travis.yml
