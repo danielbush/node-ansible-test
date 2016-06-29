@@ -20,6 +20,12 @@ var build = process.env.TRAVIS_BUILD_NUMBER;
 var wdUrl = `http://${username}:${accessKey}@ondemand.saucelabs.com/wd/hub`;
 console.log(url.parse(wdUrl));
 
+var caps = { browserName: 'MicrosoftEdge' };
+caps['platform'] = 'Windows 10';
+caps['version'] = '13.10586';
+caps['tunnel-identifier'] = process.env.TRAVIS_JOB_NUMBER;
+caps['build'] = process.env.TRAVIS_BUILD_NUMBER;
+
 describe('something', function () {
 
   before(function () {
@@ -28,16 +34,7 @@ describe('something', function () {
     //browser = wd.promiseChainRemote('localhost', 4445, username, accessKey);
     browser = wd.promiseChainRemote(wdUrl);
 
-    return browser.init({
-      browserName: 'internet explorer',
-      platform: 'Windows 10',
-      version: '11.103',
-      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-      build: process.env.TRAVIS_BUILD_NUMBER,
-      name: 'tests',
-      username: username,
-      accessKey: accessKey
-    });
+    return browser.init(caps);
   });
 
   beforeEach(function() {
