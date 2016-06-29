@@ -25,6 +25,8 @@ caps['platform'] = 'Windows 10';
 caps['version'] = '13.10586';
 caps['tunnel-identifier'] = process.env.TRAVIS_JOB_NUMBER;
 caps['build'] = process.env.TRAVIS_BUILD_NUMBER;
+caps['username'] = username;
+caps['accessKey'] = accessKey;
 
 describe('something', function () {
 
