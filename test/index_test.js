@@ -24,7 +24,8 @@ describe('something', function () {
   });
 
   beforeEach(function() {
-    return browser.get('https://www.google.com');
+    //return browser.get('https://www.google.com');
+    return browser.get('http://localhost:8000');
   });
 
   after(function () {
