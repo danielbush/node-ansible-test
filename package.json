@@ -33,7 +33,7 @@
     "test:mink": "node_modules/.bin/cucumber-mink -- --require features/support --require features/step_definitions/", 
     "pretest:acceptance": "npm run phantomjs & sleep 0.5", 
     "posttest:acceptance": "pkill phantomjs && true", 
-    "test:sauce": "npm run test:mink", 
+    "test:sauce": "npm test", 
     "build": "node_modules/babel-cli/bin/babel.js src --out-dir lib", 
     "prepublish": "npm run build", 
     "pretest": "echo \"building project into lib/\"; npm run build", 
