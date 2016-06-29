@@ -26,8 +26,7 @@ describe('something', function () {
       host: 'ondemand.saucelabs.com',
       port: 80,
       path: '/wd/hub',
-      user: username,
-      pwd: accessKey
+      auth: username + ':' + accessKey
     });
 
     return browser.init({
@@ -42,7 +41,7 @@ describe('something', function () {
 
   beforeEach(function() {
     //return browser.get('https://www.google.com');
-    return browser.get('http://localhost:4445');
+    return browser.get('http://localhost:8000');
   });
 
   after(function () {
