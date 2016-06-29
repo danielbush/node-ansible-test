@@ -18,8 +18,8 @@ describe('something', function () {
 
   before(function () {
     //browser = wd.promiseChainRemote('localhost');
-    //browser = wd.promiseChainRemote('ondemand.saucelabs.com', 80, username, accessKey);
-    browser = wd.promiseChainRemote('localhost', 4445, username, accessKey);
+    browser = wd.promiseChainRemote('ondemand.saucelabs.com', 80, username, accessKey);
+    //browser = wd.promiseChainRemote('localhost', 4445, username, accessKey);
     return browser.init({browserName:'chrome'});
   });
 
