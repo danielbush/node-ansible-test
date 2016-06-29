@@ -42,7 +42,7 @@ describe('something', function () {
 
   beforeEach(function() {
     //return browser.get('https://www.google.com');
-    return browser.get('http://localhost:8000');
+    return browser.get('http://localhost:4445');
   });
 
   after(function () {
