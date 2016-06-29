@@ -17,7 +17,7 @@ var accessKey = process.env.SAUCE_ACCESS_KEY;
 var tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
 var build = process.env.TRAVIS_BUILD_NUMBER;
 
-var wdUrl = `http://${username}:$(accessKey)@ondemand.saucelabs.com/wd/hub`;
+var wdUrl = `http://${username}:${accessKey}@ondemand.saucelabs.com/wd/hub`;
 console.log(url.parse(wdUrl));
 
 describe('something', function () {
