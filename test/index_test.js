@@ -30,6 +30,8 @@ caps['accessKey'] = accessKey;
 
 describe('something', function () {
 
+  this.timeout(10000);
+
   before(function () {
     //browser = wd.promiseChainRemote('localhost');
     //browser = wd.promiseChainRemote('ondemand.saucelabs.com', 80, username, accessKey);
