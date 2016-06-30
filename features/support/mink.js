@@ -50,7 +50,9 @@ var parameters = {
 
 module.exports = function () {
   Mink.init(this, {
-    driver: { desiredCapabilities: caps },
-    url: wdUrl
+    driver: {
+      desiredCapabilities: caps,
+      url: wdUrl
+    }
   });
 };
