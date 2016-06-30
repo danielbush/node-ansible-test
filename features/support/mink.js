@@ -52,7 +52,10 @@ module.exports = function () {
   Mink.init(this, {
     driver: {
       desiredCapabilities: caps,
-      url: wdUrl
+      host: 'ondemand.saucelabs.com',
+      port: 80,
+      auth: `${username}:${accessKey}`,
+      path: '/wd/hub'
     }
   });
 };
