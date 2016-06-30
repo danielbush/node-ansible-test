@@ -54,8 +54,9 @@ module.exports = function () {
       desiredCapabilities: caps,
       host: 'ondemand.saucelabs.com',
       port: 80,
-      auth: `${username}:${accessKey}`,
-      path: '/wd/hub'
+      path: '/wd/hub',
+      user: username,
+      key: accessKey
     }
   });
 };
