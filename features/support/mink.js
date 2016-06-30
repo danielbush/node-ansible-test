@@ -22,8 +22,8 @@ caps['platform'] = 'Windows 10';
 caps['version'] = '13.10586';
 caps['tunnel-identifier'] = process.env.TRAVIS_JOB_NUMBER;
 caps['build'] = process.env.TRAVIS_BUILD_NUMBER;
-caps['username'] = username;
-caps['accessKey'] = accessKey;
+caps['user'] = username;
+caps['key'] = accessKey;
 
 // Phantomjs - GhostDriver
 var parameters = {
@@ -53,9 +53,9 @@ module.exports = function () {
   Mink.init(this, {
     driver: {
       desiredCapabilities: caps,
-      //host: 'ondemand.saucelabs.com',
-      //port: 80,
-      //path: '/wd/hub',
+      host: 'ondemand.saucelabs.com',
+      port: 80,
+      path: '/wd/hub',
       user: username,
       key: accessKey
     }
