@@ -49,12 +49,13 @@ var parameters = {
 };
 
 module.exports = function () {
+  console.log('initing mink');
   Mink.init(this, {
     driver: {
       desiredCapabilities: caps,
-      host: 'ondemand.saucelabs.com',
-      port: 80,
-      path: '/wd/hub',
+      //host: 'ondemand.saucelabs.com',
+      //port: 80,
+      //path: '/wd/hub',
       user: username,
       key: accessKey
     }
