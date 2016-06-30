@@ -17,9 +17,10 @@ var accessKey = process.env.SAUCE_ACCESS_KEY;
 var tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
 var build = process.env.TRAVIS_BUILD_NUMBER;
 
+// Url to send webdriver commands to saucelabs:
 var wdUrl = `http://${username}:${accessKey}@ondemand.saucelabs.com/wd/hub`;
-console.log(url.parse(wdUrl));
 
+// Example capabilities:
 var caps = { browserName: 'MicrosoftEdge' };
 caps['platform'] = 'Windows 10';
 caps['version'] = '13.10586';
@@ -30,19 +31,18 @@ caps['accessKey'] = accessKey;
 
 describe('something', function () {
 
-  this.timeout(10000);
+  this.timeout(10000); // IMPORTANT - default 2s timeout is not enough
 
   before(function () {
-    //browser = wd.promiseChainRemote('localhost');
-    //browser = wd.promiseChainRemote('ondemand.saucelabs.com', 80, username, accessKey);
-    //browser = wd.promiseChainRemote('localhost', 4445, username, accessKey);
     browser = wd.promiseChainRemote(wdUrl);
-    browser.setAsyncScriptTimeout(20000);
+    //browser.setAsyncScriptTimeout(20000);
     return browser.init(caps);
   });
 
   beforeEach(function() {
-    //return browser.get('https://www.google.com');
+    // See travis.yml
+    // - before_script starts a server on localhost:8000
+    // - sauce_connect creates tunnel so browsers can access our site
     return browser.get('http://localhost:8000');
   });
 
@@ -51,7 +51,7 @@ describe('something', function () {
   });
 
   it('should retrieve the page title', function() {
-    return expect(browser.title()).to.eventually.equal('Google');
+    return expect(browser.title()).to.eventually.match(/directory listing/i);
   });
 
 });
